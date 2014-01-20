@@ -16,7 +16,7 @@ function _wd_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', '_ph_page_menu_args' );
+add_filter( 'wp_page_menu_args', '_wd_page_menu_args' );
 
 
 function _wd_body_classes( $classes ) {
@@ -25,7 +25,7 @@ function _wd_body_classes( $classes ) {
 	}
 	return $classes;
 }
-add_filter( 'body_class', '_ph_body_classes' );
+add_filter( 'body_class', '_wd_body_classes' );
 
 
 function _wd_enhanced_image_navigation( $url, $id ) {
@@ -36,11 +36,11 @@ function _wd_enhanced_image_navigation( $url, $id ) {
 		$url .= '#main';
 	return $url;
 }
-add_filter( 'attachment_link', '_ph_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', '_wd_enhanced_image_navigation', 10, 2 );
 
 
 add_action('init', 'wd_head_cleanup');
-function ph_head_cleanup() {
+function wd_head_cleanup() {
   remove_action('wp_head', 'feed_links');
   remove_action('wp_head', 'feed_links', 2 );
   remove_action('wp_head', 'feed_links_extra');
@@ -69,7 +69,7 @@ global $menu;
 }
 
 add_action('login_head', 'wd_login_logo');
-function phf_login_logo() {
+function wd_login_logo() {
     echo '<style type="text/css">
         h1 a { background-image:url('.get_bloginfo('template_directory').'/img/login.png) !important; }
     </style>';
@@ -118,7 +118,7 @@ function wd_rss_output(){
     echo '<div class="rss-widget">'; 
        wp_widget_rss_output(array(
             'url' => 'http://' . $_SERVER['HTTP_HOST'] . '/feed', 
-            'title' => wp_title();,
+            'title' => 'feed',
             'items' => 4, 
             'show_summary' => 1,
             'show_author' => 0,
