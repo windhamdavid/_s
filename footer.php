@@ -4,7 +4,13 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
+<<<<<<< HEAD
 
+=======
+			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+>>>>>>> upstream/master
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
